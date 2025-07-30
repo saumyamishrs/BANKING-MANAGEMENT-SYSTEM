@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - IERT Bank</title>
+    <style>
+        
+
+        body {
+            font-family: 'Poppins', sans-serif;
+background-color: aqua;
+background: url(login3.jpg) no-repeat center center; /* center kro image ko*/
+background-size: cover; /* 40 baar photo nhi dikhani bhaiya */
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: flex-end; /* Aligns the container to the right hath ki or */
+align-items: center;
+height: 100vh;
+padding: 50px; /*  padding kam kr rha  pehle thi - 100px */
+color: #333;
+
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background: rgb(31, 108, 186); /* neela background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-right: -4rem; /* Keeps the right margin */
+    margin-top: -50px; /* Moves the form up */
+}
+
+
+        .login-container h2 {
+            font-size: 1.8rem;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .login-container form input {
+            width: 90%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .login-container form input:focus {
+            outline: none;
+            border-color: black;
+            background: rgb(212, 198, 200);
+            box-shadow: 0 0 8px black;
+        }
+
+        .login-container form button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 8px;
+            background: blue;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container form button:hover {
+            background: red;
+        }
+    </style> 
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="login.php" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
