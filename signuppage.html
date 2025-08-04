@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Opening</title>
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #003366;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 400px;
+            width: 90%;
+            background: #fff;
+            padding: 25px 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            color: #004080;
+            font-size: 1.8em;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 15px 0 5px;
+            font-weight: bold;
+            color: #004080;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #004080;
+            box-shadow: 0 0 5px rgba(0, 64, 128, 0.2);
+        }
+
+        /* Button Styling */
+        button {
+            margin-top: 20px;
+            background: linear-gradient(45deg, #004080, #0066cc);
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #003366, #0055aa);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Text Links */
+        .text {
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        .text a {
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>SignUp or Register</h2>
+        <form id="accountForm" action="signup.php" method="POST">
+            <label for="name">User Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit phone number" required>
+
+            <label for="password">Create Password</label>
+            <input type="text" id="password" name="password" placeholder="Enter a secure password" required>
+
+            <button type="submit">Register</button>
+            <p class="text">
+                Already have an account? <a href="login.html">Log In</a>
+            </p>
+        </form>
+    </div>
+</body>
+</html>
