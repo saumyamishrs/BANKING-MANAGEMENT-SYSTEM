@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step-by-Step Savings Account Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        h2 {
+            text-align: center;
+            color: #2b6cb0;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .progress-bar {
+            position: relative;
+            background: #e2e8f0;
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .progress {
+            background: #4CAF50;
+            height: 8px;
+            width: 0%;
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn-next {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn-next:hover {
+            background-color: #45a049;
+        }
+        .btn-prev {
+            background-color: #edf2f7;
+            color: #333;
+        }
+        .btn-prev:hover {
+            background-color: #e2e8f0;
+        }
+        .step-indicator {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .step-indicator span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            background: #e2e8f0;
+            border-radius: 50%;
+            line-height: 30px;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .step-indicator span.active {
+            background: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Step-by-Step Savings Account Form</h2>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <div class="step-indicator">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+        </div>
+        <form id="savingAccountForm" action="savingAccount.php" method="post">
+            <!-- Step 1 -->
+            <div class="step active">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="father_name">Father Name:</label>
+                <input type="text" id="father_name" name="father_name" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <button type="button" class="btn-next">Next</button>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit number" required>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="occupation">Occupation:</label>
+                <input type="text" id="occupation" name="occupation">
+
+                <button type="button" class="btn-prev">Previous</button>
+                <button type="button" class="btn-next">Next</button>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step">
+                <label for="pancard">PAN Card:</label>
+                <input type="text" id="pancard" name="pancard" pattern="[A-Z]{5}[0-9]{4}[A-Z]" placeholder="E.g., ABCDE1234F" required>
+
+                <label for="aadhar">Aadhaar Number:</label>
+                <input type="text" id="aadhar" name="aadhar" placeholder="Enter your Aadhaar number" maxlength="12" required>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+
+                <label for="marital_status">Marital Status:</label>
+                <select id="maritalstatus" name="marital_status" required>
+                    <option value="">Select Marital Status</option>
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="widowed">Widowed</option>
+                </select>
+
+                <button type="button" class="btn-prev">Previous</button>
+                <button type="button" class="btn-next">Next</button>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step">
+                <label for="username">Banking Username:</label>
+                <input type="text" id="username" name="username"placeholder="Enter your banking username" required>
+
+                <label for="password">Banking Login Password:</label>
+                <input type="password" id="password" name="password"placeholder="Enter your banking password" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="money">Money Required:</label>
+                <input type="number" id="money" name="money" placeholder="Minimum Rs500 required" min="500" required>
+
+                <button type="button" class="btn-prev">Previous</button>
+                <button type="submit" class="btn-next">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const steps = document.querySelectorAll('.step');
+        const indicators = document.querySelectorAll('.step-indicator span');
+        const progressBar = document.querySelector('.progress');
+        let currentStep = 0;
+
+        function updateSteps() {
+            steps.forEach((step, index) => {
+                step.classList.toggle('active', index === currentStep);
+                indicators[index].classList.toggle('active', index === currentStep);
+            });
+            progressBar.style.width = ((currentStep + 1) / steps.length) * 100 + '%';
+        }
+
+        document.querySelectorAll('.btn-next').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    updateSteps();
+                }
+            });
+        });
+
+        document.querySelectorAll('.btn-prev').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (currentStep > 0) {
+                    currentStep--;
+                    updateSteps();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
